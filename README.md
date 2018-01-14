@@ -1,6 +1,6 @@
 Yii 2 (Basic Project Template) Personal site "Rservice", auto repair
 ======================================================================
-![Иллюстрация к проекту](https://pp.userapi.com/c840236/v840236929/64194/Q-whNXFTF2I.jpg)
+![Иллюстрация к проекту](https://pp.userapi.com/c841430/v841430240/5612b/uaKGlAWlo70.jpg)
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
