@@ -1,4 +1,4 @@
-Yii 2 (Basic Project Template) Personal site "Rservice", auto repair
+Yii 2 (Basic Project Template) Website services "Masters59"
 ======================================================================
 ![Иллюстрация к проекту](https://pp.userapi.com/c841430/v841430240/5612b/uaKGlAWlo70.jpg)
 
