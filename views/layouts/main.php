@@ -25,46 +25,38 @@ MastersAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-<div id="wrap">
-
-    <!-- Top bar -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2 noo-res"></div>
-            <div class="col-md-10">
-                <div class="top-bar">
-                    <div class="col-md-3">
-                        <ul class="social_icons">
-                            <li><a href="#."><i class="fa fa-vk"></i></a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Social Icon -->
-                    <div class="col-md-9">
-                        <ul class="some-info font-montserrat">
-                            <li><i class="fa fa-phone"></i> +8 952 64 56 013</li>
-                            <li><i class="fa fa-envelope"></i> masters59@mail.ru</li>
-                            <li><i class="fa fa-weixin"></i> LiveChat</li>
-                            <li><i class="fa fa-question-circle"></i> Support</li>
-                        </ul>
+<header class="header coporate-header">
+        <div class="header-info">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 noo-res"></div>
+                    <div class="col-md-10">
+                        <div class="top-bar">
+                            <div class="col-md-3">
+                                <ul class="social_icons">
+                                    <li><a href="#."><i class="fa fa-vk"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-9">
+                                <ul class="some-info font-montserrat">
+                                    <li><i class="fa fa-phone"></i>8 (999) 999 99 99</li>
+                                    <li><i class="fa fa-envelope"></i> masters59@mail.ru</li>
+                                    <li><i class="fa fa-location-arrow"></i>г.Пермь Чернышевского, 22</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <!-- Header -->
-    <header class="header coporate-header">
         <div class="sticky">
             <div class="container">
-                <div class="logo"> <a href="/site/index/"><img src="/masters/images/banners/5.png" alt=""></a> </div>
+                <div class="logo"> <a href="/"><img src="<?php echo Yii::getAlias('@appTheme');   ?>/images/banners/5.png" alt=""></a></div>
 
                 <!-- Nav -->
                 <nav>
                     <ul id="ownmenu" class="ownmenu">
-                        <li><a href="/site/index">Главная</a></li>
+                        <li><a href="/">Главная</a></li>
                         <li><a href="#">Каталог услуг</a>
                             <ul class="dropdown">
                                 <?= \app\components\MenuWidget::widget(['tpl'=>'menu'])?>
@@ -79,6 +71,7 @@ MastersAsset::register($this);
                                 <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['auth/signup']) ?>">Регистрация</a>
                                     <?php else: ?>
                                 <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['/auth/logout']) ?>">Выход(<?= Yii::$app->user->identity->name ?>)</a>
+                                <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['/site/afish']) ?>">Добавить</a>
                                     <?php endif; ?>
                             </ul>
                         </li>
@@ -98,22 +91,14 @@ MastersAsset::register($this);
             </div>
         </div>
     </header>
-    <!-- End Header -->
 
-    <!--======= HOME MAIN SLIDER =========-->
+<main><?= $content ?></main>
 
-
-    <!-- Content -->
-    <?= $content ?>
-    <!-- End Content -->
-
-    <!-- Footer -->
-    <footer>
+<footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 padding-top-50">
 
-                    <!-- News Letter -->
                     <div class="news-letter">
                         <h6>News Letter</h6>
                         <form>
@@ -123,7 +108,6 @@ MastersAsset::register($this);
                     </div>
                 </div>
 
-                <!-- Folow Us -->
                 <div class="col-md-6 padding-top-50">
                     <div class="news-letter">
                         <h6>Follow us</h6>
@@ -141,13 +125,11 @@ MastersAsset::register($this);
             </div>
         </div>
 
-        <!-- Footer Info -->
         <div class="footer-info">
             <div class="container">
                 <div class="row">
 
-                    <!-- About -->
-                    <div class="col-md-4"> <img class="margin-bottom-30" src="/masters/images/logo-footer.png" alt="" >
+                    <div class="col-md-4"> <img class="margin-bottom-30" src="<?php echo Yii::getAlias('@appTheme');   ?>/images/logo-footer.png" alt="" >
                         <p>Aoluptas sit aspernatur aut odit aut fugit, sed elits quias consequuntur magni dolores eos qui ratione volust  luptatem sequi nesciunt. .</p>
                         <ul class="personal-info">
                             <li><i class="fa fa-map-marker"></i> 10th Floor,Washington Square Park,
@@ -157,7 +139,6 @@ MastersAsset::register($this);
                         </ul>
                     </div>
 
-                    <!-- Service provided -->
                     <div class="col-md-4">
                         <h6>Service provided</h6>
                         <ul class="links">
@@ -174,7 +155,6 @@ MastersAsset::register($this);
                         </ul>
                     </div>
 
-                    <!-- Quote -->
                     <div class="col-md-4">
                         <h6>Get Free Quote</h6>
                         <div class="quote">
@@ -190,21 +170,13 @@ MastersAsset::register($this);
             </div>
         </div>
 
-        <!-- Rights -->
         <div class="rights">
             <div class="container">
-                <p>Copyright © 2016 Infinity SEO Solution. All Rights Reserved.</p>
+                <p>Copyright © <?php echo date("Y"); ?> Masters59</p>
             </div>
         </div>
     </footer>
-</div>
-
-
 <?php $this->endBody() ?>
-<script type="text/javascript" src="/masters/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="/masters/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="/masters/js/main.js"></script>
-
 </body>
 </html>
 <?php $this->endPage() ?>

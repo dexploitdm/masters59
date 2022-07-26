@@ -33,7 +33,7 @@
                 <?php endforeach; ?>
 
 
-                <a href="/admin/zovs/index" class="view-more">
+                <a href="<?php echo Yii::getAlias('@admin');   ?>/zovs/index" class="view-more">
                     <i class="zmdi zmdi-long-arrow-right"></i> Показать все
                 </a>
             </div>
@@ -69,7 +69,7 @@
                 <?php endforeach; ?>
 
 
-                <a href="/admin/comment/index" class="view-more">
+                <a href="<?php echo Yii::getAlias('@admin');   ?>/comment/index" class="view-more">
                     <i class="zmdi zmdi-long-arrow-right"></i> Показать все
                 </a>
             </div>

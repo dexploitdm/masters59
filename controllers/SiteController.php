@@ -7,6 +7,7 @@ use app\models\Comment;
 use app\models\ZovsForm;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\data\Pagination;
 use yii\filters\VerbFilter;
@@ -206,6 +207,7 @@ class SiteController extends Controller
         ]);
         //return $this->render('about',compact('zovsForm','zovs','commentForm'));
     }
+
     public function actionZovs()
     {
         $model = new ZovsForm();
@@ -215,8 +217,35 @@ class SiteController extends Controller
             $model->load(Yii::$app->request->post());
             if($model->saveZovs())
             {
-                Yii::$app->getSession()->setFlash('zovs', 'Ваш отправлен. Ожидайте одобрения на публикацию');
+                Yii::$app->getSession()->setFlash('zovs', 'Ваш комментарий отправлен. Ожидайте одобрения на публикацию');
                 return $this->redirect(['site/about']);
+            }
+        }
+
+    }
+
+    public function actionAfish()
+    {
+        $model = new Afish();
+        $cataloges = ArrayHelper::map(Catalog::find()->all(), 'id','title');
+        return $this->render('afish', [
+            'model'=>$model,
+            'cataloges'=>$cataloges
+        ]);
+    }
+    public function actionCreate()
+    {
+        $model = new Afish();
+
+        if(Yii::$app->request->isPost)
+        {
+            $model->load(Yii::$app->request->post());
+            //var_dump($model);
+
+            if($model->saveArticle())
+            {
+                Yii::$app->getSession()->setFlash('afish', 'Ваш запрос отправлен. Ожидайте одобрения на публикацию');
+                return $this->redirect(['site/afish']);
             }
         }
 

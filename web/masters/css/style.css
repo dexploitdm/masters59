@@ -43,15 +43,6 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 /*=======================================================
-      WRAPPER
-========================================================*/
-#wrap {
-	position: relative;
-	width: 100%;
-	overflow: hidden;
-	border-top:4px solid #222935;
-}
-/*=======================================================
       HEADINGS
 ========================================================*/
 h1, h2, h3, h4, h5, h6 {
@@ -342,9 +333,11 @@ header {
 	position: relative;
 	width: 100%;
 	z-index: 999;
-	margin-top: 0px;
-	padding: 20px 0;
-	padding-top:25px;
+	margin-top: 0;
+	padding: 0;
+}
+.header-info {
+	border-top:4px solid #222935;
 }
 header .logo {
 	float: left;
@@ -629,20 +622,6 @@ header.coporate-header .ownmenu > li > .megamenu {
 .sub-banner .breadcrumb li a{
 	color:#ff6c3a;
 	font-family: 'Open Sans', sans-serif;
-}
-/*=======================================================
-      HOME SLIDER
-========================================================*/
-.home-slider{
-	position:relative;
-	overflow:hidden;
-	max-height:670px;
-	z-index:9;
-}
-.home-slider .btn{
-	font-size:18px;
-	font-weight:normal;
-	padding:15px 30px;
 }
 /*=======================================================
       SEO SECORE
@@ -1500,7 +1479,7 @@ footer .news-letter button{
 	line-height:40px;
 	font-size:13px;
 	padding-bottom:3px;
-	border-bottom:1px dashed #rgba(255,255,255,0);
+	border-bottom:1px dashed rgba(255,255,255,0);
 }
 .footer-info .links li a:hover{
 	color:#fff;
@@ -1563,8 +1542,102 @@ footer .news-letter button{
 .social_icons li a:hover{
 	background:#ff6c3a;
 }
+/*=======================================================
+      HOME SLIDER
+========================================================*/
+.home-slider{
+	/*position:relative;*/
+	/*overflow:hidden;*/
+	/*z-index:9;*/
+}
+.home-slider .btn{
+	font-size:18px;
+	font-weight:normal;
+	padding:15px 30px;
+	transition: .3s;
+}
+.swiper {
+	width: 100%;
+	height: 100%;
+}
 
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
 
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
 
-
-
+.swiper-slide img {
+	display: block;
+	object-fit: cover;
+}
+.slider-box {
+	display: flex;
+	align-items: center;
+	padding: 40px 16px;
+	transition: .3s;
+}
+.slider-content {
+	color: #fff;
+	text-align: left;
+}
+.slider-content_t1 {
+	color: #141414;
+}
+.slider-content h1 {
+	color: #fff;
+	transition: .3s;
+}
+.slider-content_text {
+	padding-bottom: 20px;
+}
+@media (max-width: 991px) {
+	.swiper-slide img {
+		max-width: 380px;
+	}
+}
+@media (max-width: 800px) {
+	.slider-box {
+		flex-wrap: wrap;
+		padding: 20px;
+	}
+	.swiper-slide img {
+		width: 100%;
+		min-height: 320px;
+	}
+	.slider-cover {
+		margin: auto auto 10px;
+		padding-bottom: 10px;
+	}
+	.slider-content {
+		text-align: center;
+	}
+}
+@media (max-width: 768px) {
+	.slider-content h1 {
+		font-size: 34px;
+	}
+	.home-slider .btn {
+		padding: 4px 16px;
+		text-transform: lowercase;
+	}
+}
+@media (max-width: 480px) {
+	.swiper-slide img {
+		min-height: auto;
+	}
+}

@@ -133,8 +133,20 @@ function checkmail(input){
 		}}
 	});
 }};
-
-
+/*-----------------------------------------------------------------------------------*/
+/*  Sliders
+/*-----------------------------------------------------------------------------------*/
+var swiper = new Swiper(".slider-home", {
+	 autoHeight: true,
+	loop: true,
+	autoplay: {
+		delay: 4500,
+		disableOnInteraction: false,
+	},
+	pagination: {
+		el: ".swiper-pagination",
+	},
+});
 
 
 

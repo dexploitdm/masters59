@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -40,51 +41,6 @@ AppAsset::register($this);
         <li class="top-menu__trigger hidden-lg hidden-md">
             <a href=""><i class="zmdi zmdi-search"></i></a>
         </li>
-
-        <li class="top-menu__apps dropdown hidden-xs hidden-sm">
-            <a data-toggle="dropdown" href="">
-                <i class="zmdi zmdi-apps"></i>
-            </a>
-            <ul class="dropdown-menu pull-right">
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-calendar"></i>
-                        <small>Calendar</small>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-file-text"></i>
-                        <small>Files</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-email"></i>
-                        <small>Mail</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-trending-up"></i>
-                        <small>Analytics</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-view-headline"></i>
-                        <small>News</small>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="zmdi zmdi-image"></i>
-                        <small>Gallery</small>
-                    </a>
-                </li>
-            </ul>
-        </li>
         <li class="dropdown hidden-xs">
             <a data-toggle="dropdown" href=""><i class="zmdi zmdi-more-vert"></i></a>
             <ul class="dropdown-menu dropdown-menu--icon pull-right">
@@ -107,21 +63,18 @@ AppAsset::register($this);
         </li>
         <li class="top-menu__profile dropdown">
             <a data-toggle="dropdown" href="">
-                <img src="/adminTheme/demo/img/profile-pics/1.jpg" alt="">
+                <img src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/1.jpg" alt="">
             </a>
 
             <ul class="dropdown-menu pull-right dropdown-menu--icon">
                 <li>
-                    <a href="profile-about.html"><i class="zmdi zmdi-account"></i> Профиль</a>
+                    <a href="#"><i class="zmdi zmdi-account"></i> Профиль</a>
                 </li>
                 <li>
-                    <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                    <a href="/" target="_blank"><i class="zmdi zmdi-settings"></i> Перейти на сайт</a>
                 </li>
                 <li>
-                    <a href=""><i class="zmdi zmdi-settings"></i> Перейти на сайт</a>
-                </li>
-                <li>
-                    <a href=""><i class="zmdi zmdi-time-restore"></i> Выход</a>
+                    <a href="<?= Url::toRoute(['/auth/logout']) ?>"><i class="zmdi zmdi-time-restore"></i>Выход(<?= Yii::$app->user->identity->name ?>)</a>
                 </li>
             </ul>
         </li>
@@ -142,7 +95,7 @@ AppAsset::register($this);
                 <div class="list-group">
                     <a href="" class="list-group-item media">
                         <div class="pull-left">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/1.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/1.jpg" alt="">
                         </div>
 
                         <div class="media-body">
@@ -201,7 +154,7 @@ AppAsset::register($this);
                 <div class="list-group">
                     <a href="" class="list-group-item media">
                         <div class="pull-right">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/1.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/1.jpg" alt="">
                         </div>
 
                         <div class="media-body">
@@ -304,7 +257,7 @@ AppAsset::register($this);
         </div>
 
         <div class="navigation__toggles">
-            <a href="/admin/zovs/index" class="active" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
+            <a href="<?php echo Yii::getAlias('@admin');   ?>/zovs/index" class="active" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
                 <i class="zmdi zmdi-email"></i>
             </a>
         </div>
@@ -312,23 +265,22 @@ AppAsset::register($this);
         <div class="navigation__menu c-overflow">
             <ul>
                 <li class="navigation__active">
-                    <a href="/admin/default/index"><i class="zmdi zmdi-home"></i> Главная</a>
+                    <a href="<?php echo Yii::getAlias('@admin');   ?>/default/index"><i class="zmdi zmdi-home"></i> Главная</a>
                 </li>
-                <li><a href="/admin/banner/index"><i class="zmdi zmdi-image"></i> Редактировани главной</a></li>
-                <li><a href="/admin/comment/index"><i class="zmdi zmdi-format-underlined"></i> Коментарии</a></li>
-                <li><a href="/admin/catalog/index"><i class="zmdi zmdi-widgets"></i> Каталоги</a></li>
-                <li><a href="/admin/afish/index"><i class="zmdi zmdi-layers"></i> Афиши</a></li>
-                <li><a href="/admin/zovs/index" class="dropmenu"><i class="zmdi zmdi-collection-item"></i> Отзывы</a></li>
+                <li><a href="<?php echo Yii::getAlias('@admin');   ?>/banner/index"><i class="zmdi zmdi-image"></i> Редактировани главной</a></li>
+                <li><a href="<?php echo Yii::getAlias('@admin');   ?>/comment/index"><i class="zmdi zmdi-format-underlined"></i> Коментарии</a></li>
+                <li><a href="<?php echo Yii::getAlias('@admin');   ?>/catalog/index"><i class="zmdi zmdi-widgets"></i> Каталоги</a></li>
+                <li><a href="<?php echo Yii::getAlias('@admin');   ?>/afish/index"><i class="zmdi zmdi-layers"></i> Афиши</a></li>
+                <li><a href="<?php echo Yii::getAlias('@admin');   ?>/zovs/index" class="dropmenu"><i class="zmdi zmdi-collection-item"></i> Отзывы</a></li>
             </ul>
         </div>
     </aside>
 
 <?= $content; ?>
     <footer id="footer">
-        Exploitdm &copy; 2017 Material Admin
-
+        Masters &copy; <?php echo date("Y"); ?>
         <ul class="footer__menu">
-            <li><a href="/site/index">Перейти на сайт</a></li>
+            <li><a href="/" target="_blank">Перейти на сайт</a></li>
         </ul>
     </footer>
 </section>

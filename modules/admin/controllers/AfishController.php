@@ -69,6 +69,7 @@ class AfishController extends Controller
     {
         $model = new Afish();
 
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

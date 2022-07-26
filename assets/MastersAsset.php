@@ -18,32 +18,34 @@ class MastersAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'masters/css/bootstrap/bootstrap.min.css',
-        'masters/css/font-awesome.min.css',
-        'masters/css/main.css',
-        'masters/css/style.css',
-        'masters/css/responsive.css',
-        'masters/rs-plugin/css/settings.css',
+        'web/masters/css/bootstrap/bootstrap.min.css',
+        'web/masters/css/font-awesome.min.css',
+        'web/masters/css/main.css',
+        'web/masters/css/responsive.css',
+        'web/masters/rs-plugin/css/settings.css',
+        'web/masters/swiper/swiper-bundle.min.css',
+        'web/masters/css/style.css',
 
     ];
     public $js = [
-        'masters/js/vendors/jquery/jquery.min.js',
-        'masters/js/vendors/wow.min.js',
-        'masters/js/vendors/bootstrap.min.js',
-        'masters/js/vendors/own-menu.js',
-        'masters/js/vendors/flexslider/jquery.flexslider-min.js',
-        'masters/js/vendors/jquery.countTo.js',
-        'masters/js/vendors/jquery.isotope.min.js',
-        'masters/js/vendors/jquery.bxslider.min.js',
-        'masters/js/vendors/owl.carousel.min.js',
-        'masters/js/vendors/jquery.sticky.js',
-        'masters/js/vendors/js/main.js',
-        'masters/js/vendors/modernizr.js',
-        'masters/rs-plugin/js/jquery.themepunch.tools.min.js',
-        'masters/rs-plugin/js/jquery.themepunch.revolution.min.js',
+        'web/masters/js/vendors/jquery/jquery.min.js',
+        'web/masters/js/vendors/wow.min.js',
+        'web/masters/js/vendors/bootstrap.min.js',
+        'web/masters/js/vendors/own-menu.js',
+        'web/masters/js/vendors/flexslider/jquery.flexslider-min.js',
+        'web/masters/js/vendors/jquery.countTo.js',
+        'web/masters/js/vendors/jquery.isotope.min.js',
+        'web/masters/js/vendors/jquery.bxslider.min.js',
+        'web/masters/js/vendors/owl.carousel.min.js',
+        'web/masters/js/vendors/jquery.sticky.js',
+        'web/masters/js/vendors/modernizr.js',
+        'web/masters/rs-plugin/js/jquery.themepunch.tools.min.js',
+        'web/masters/rs-plugin/js/jquery.themepunch.revolution.min.js',
+        'web/masters/swiper/swiper-bundle.min.js',
+        'web/masters/js/main.js',
     ];
     public $depends = [
-        //'yii\web\YiiAsset',
+        'yii\web\YiiAsset',
         //'yii\bootstrap\BootstrapAsset',
     ];
 }

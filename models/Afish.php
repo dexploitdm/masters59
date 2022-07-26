@@ -8,6 +8,10 @@ use Yii;
 class Afish extends \yii\db\ActiveRecord
 {
     /**
+     * @var int|mixed|string|null
+     */
+
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -25,7 +29,7 @@ class Afish extends \yii\db\ActiveRecord
             [['name', 'image'], 'string', 'max' => 255],
 */
             [['name'], 'required'],
-            [['name','description','content'],'string'],
+            [['name','description','content', 'catalog_id'],'string'],
             [['date'], 'date', 'format'=>'php:Y-m-d'],
             [['date'], 'default', 'value' => date('Y-m-d')],
             [['name','phone'],'string','max'=> 255],
@@ -52,8 +56,20 @@ class Afish extends \yii\db\ActiveRecord
 
     public function saveArticle()
     {
-        $this->user_id = Yii::$app->user->id;
-        return $this->save(false);
+
+
+        //var_dump($this->catalog_id);
+
+
+        $afish = new Afish();
+        $afish->user_id = Yii::$app->user->id;
+        $afish->name = $this->name;
+        $afish->description = $this->description;
+        $afish->phone = $this->phone;
+        $afish->content = $this->content;
+        $afish->catalog_id = $this->catalog_id;
+        $afish->date = date('Y-m-d');
+        return $afish->save(false);
     }
 
     public function saveImage($filename)
