@@ -24,25 +24,16 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </section>
 
-<!-- Content -->
 <div id="content">
-
-    <!-- Contact  -->
     <section class="contact-us light-gray-bg">
         <div class="container-fluid">
             <div class="row">
-
-                <!-- MAP -->
                 <div class="col-md-4">
                     <div id="map"></div>
                 </div>
-
-                <!-- Contact From -->
                 <div class="col-md-8">
                     <h3 class="font-alegreya margin-top-50">Get In Touch With Us</h3>
                     <div class="contact-form">
-
-                        <!-- FORM -->
                         <form role="form" id="contact_form" class="contact-form" method="post" onSubmit="return false">
                             <ul class="row">
                                 <li class="col-sm-6">
@@ -81,7 +72,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </section>
 
-    <!-- Contact Info -->
     <section class="contact-info padding-top-80 padding-bottom-80">
         <div class="container">
             <div class="row">

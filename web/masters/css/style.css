@@ -979,14 +979,6 @@ header.coporate-header .ownmenu > li > .megamenu {
 	margin-top:-35px;
 	margin-bottom:10px;
 }
-
-.latest-news .news-detail a{
-	text-transform:uppercase;
-	font-size:14px;
-	margin-top:20px;
-	display:inline-block;
-	margin-bottom:10px;
-}
 .blog article img.img-responsive{
 	width:100%;
 }
@@ -1640,4 +1632,52 @@ footer .news-letter button{
 	.swiper-slide img {
 		min-height: auto;
 	}
+}
+.afish {
+	margin-top: 76px;
+	padding-top: 60px;
+	transition: .3s;
+}
+.afish-action {
+	padding-top: 16px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.afish-action a {
+	text-transform: none;
+	font-size: 12px;
+}
+.afish-icon {
+	border: 1px solid red;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+}
+.afish-status {
+	text-align: center;
+	width: fit-content;
+	margin-bottom: -20px;
+	margin-left: -20px;
+	margin-top: 14px;
+	padding: 4px 8px;
+	border-top-right-radius: 10px;
+	color: #fff;
+	box-shadow: 3px -1px 10px rgb(0 0 0 / 50%);
+}
+.afish-status.allow {
+	background-color: #ff6326;
+}
+.afish-status.dis {
+	background-color: #141312;
+}
+.afish .news-detail {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	transition: .3s;
+}
+.afish .news-detail:hover {
+	box-shadow: 0px 0px 16px 1px rgb(0 0 0 / 20%);
 }

@@ -119,4 +119,14 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return ($this->photo) ? $this->photo : '/noavatar.png';
     }
+
+    public function getAfish()
+    {
+        return $this->hasMany(Afish::className(), ['user_id'=>'id']);
+    }
+
+    public function getUserAfish()
+    {
+        return $this->getAfish()->all();
+    }
 }

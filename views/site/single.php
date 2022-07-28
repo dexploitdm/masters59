@@ -3,15 +3,10 @@ use app\models\Comment;
 use yii\helpers\Url;
 $this->title = 'Профиль мастера';
 ?>
-<!-- Latest News -->
 <section class="latest-news blog blog-single padding-top-100 padding-bottom-100">
     <div class="container">
-
-        <!-- Blog Side -->
         <div class="row">
             <div class="col-md-9">
-
-                <!-- News 1 -->
                 <article class="margin-bottom-50"> <a href="#"> <img class="img-responsive"src="<?= $afish->getImage();?>" alt=""> </a>
                     <div class="news-detail">
                         <div class="row">
@@ -31,15 +26,10 @@ $this->title = 'Профиль мастера';
                         </div>
                     </div>
                 </article>
-
-                <!--=======  COMMENTS =========-->
                 <div class="comments">
                     <?php if(!empty($comments)): ?>
                         <?php foreach($comments as $comment ): ?>
-
                             <ul class="media-list">
-
-                                <!--=======  COMMENTS =========-->
                                 <li class="media">
                                     <div class="media-left"> <a href="#"> <img class="media-object"src="<?= $comment->user->image;?>" alt=""> </a> </div>
                                     <div class="media-body light-gray-bg">
@@ -48,16 +38,12 @@ $this->title = 'Профиль мастера';
                                         </p>
                                         <a href="#" class="reply">Reply</a> </div>
                                 </li>
-
-                                <!--=======  COMMENTS =========-->
                             </ul>
                         <?php endforeach; ?>
                     <?php endif; ?>
 
-                    <!--=======  LEAVE COMMENTS =========-->
                     <?php if(!Yii::$app->user->isGuest):?>
-
-                        <div class="leave-comment"><!--leave comment-->
+                        <div class="leave-comment">
                             <h4>Коментарий</h4>
                             <?php if(Yii::$app->session->getFlash('comment')):?>
                                 <div class="alert alert-success" role="alert">
@@ -74,28 +60,18 @@ $this->title = 'Профиль мастера';
                             </div>
                             <button type="submit" class="btn send-btn">Отправить</button>
                             <?php \yii\widgets\ActiveForm::end();?>
-
-                        </div><!--end leave comment-->
+                        </div>
                     <?php endif; ?>
-
-
                 </div>
-
 
             </div>
 
-            <!-- Side Bar -->
             <div class="col-md-3">
                 <div class="side-bar">
-
-                    <!-- Categories -->
                     <h5 class="font-alegreya ">Каталоги услуг</h5>
                     <ul class="cate bg-defult">
                         <?= \app\components\MenuWidget::widget(['tpl'=>'menu'])?>
                     </ul>
-
-
-                    <!-- Popular Post -->
                     <h5 class="font-alegreya">Популярные Специалисты</h5>
                     <div class="papu-post margin-t-40">
                         <ul class="bg-defult">

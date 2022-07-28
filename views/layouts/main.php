@@ -70,8 +70,9 @@ MastersAsset::register($this);
                                 <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['auth/login']) ?>">Вход</a>
                                 <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['auth/signup']) ?>">Регистрация</a>
                                     <?php else: ?>
+                                <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['/afish/main']) ?>">Мои</a>
+                                <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['/afish/index']) ?>">Добавить</a>
                                 <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['/auth/logout']) ?>">Выход(<?= Yii::$app->user->identity->name ?>)</a>
-                                <li class="menu-item menu-item-has-children"><a href="<?= Url::toRoute(['/site/afish']) ?>">Добавить</a>
                                     <?php endif; ?>
                             </ul>
                         </li>

@@ -9,11 +9,7 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-
-<!-- Content -->
 <div id="content">
-
-    <!-- Contact  -->
     <section class="contact-us padding-top-100 padding-bottom-100">
         <div class="container">
             <div class="text-center">

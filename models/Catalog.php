@@ -56,7 +56,7 @@ class Catalog extends \yii\db\ActiveRecord
     public static function getAfishesByCatalog($id)
     {
         // build a DB query to get all articles
-        $query = Afish::find()->where(['catalog_id'=>$id]);
+        $query = Afish::find()->where(['catalog_id'=>$id, 'status'=>'1']);
 
         // get the total number of articles (but do not fetch the article data yet)
         $count = $query->count();

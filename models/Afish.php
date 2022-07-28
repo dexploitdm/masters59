@@ -7,6 +7,21 @@ use Yii;
 
 class Afish extends \yii\db\ActiveRecord
 {
+    const STATUS_ALLOW = 1;
+    const STATUS_DISALLOW = 0;
+    /**
+     * @var mixed|\yii\web\UploadedFile|null
+     */
+
+    public function behaviors()
+    {
+        return [
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ]
+        ];
+    }
+
     /**
      * @var int|mixed|string|null
      */
@@ -28,12 +43,13 @@ class Afish extends \yii\db\ActiveRecord
             [['viewed', 'catalog_id'], 'integer'],
             [['name', 'image'], 'string', 'max' => 255],
 */
+            [['catalog_id'], 'integer'],
             [['name'], 'required'],
-            [['name','description','content', 'catalog_id'],'string'],
-            [['date'], 'date', 'format'=>'php:Y-m-d'],
+            [['name','description','content'],'string'],
+            ['date', 'datetime', 'format' => 'php:Y-m-d H:i:s'],
             [['date'], 'default', 'value' => date('Y-m-d')],
             [['name','phone'],'string','max'=> 255],
-
+            [['image'], 'file', 'extensions' => 'png, jpg'],
             ];
     }
 
@@ -56,20 +72,8 @@ class Afish extends \yii\db\ActiveRecord
 
     public function saveArticle()
     {
-
-
-        //var_dump($this->catalog_id);
-
-
-        $afish = new Afish();
-        $afish->user_id = Yii::$app->user->id;
-        $afish->name = $this->name;
-        $afish->description = $this->description;
-        $afish->phone = $this->phone;
-        $afish->content = $this->content;
-        $afish->catalog_id = $this->catalog_id;
-        $afish->date = date('Y-m-d');
-        return $afish->save(false);
+        $this->user_id = Yii::$app->user->id;
+        return $this->save(false);
     }
 
     public function saveImage($filename)
@@ -80,7 +84,7 @@ class Afish extends \yii\db\ActiveRecord
 
     public function getImage()
     {
-        return ($this->image) ? '/uploads/' . $this->image : '/no-image.png';
+        return ($this->image) ? '/web/uploads/afish/' . $this->image : '/no-image.png';
     }
 
     public function deleteImage()
@@ -151,12 +155,34 @@ class Afish extends \yii\db\ActiveRecord
         return Afish::find()->orderBy('date asc')->limit(3)->all();
     }
 
+    public function upload() {
+        if ($this->validate()){
+            $path = 'uploads/afish/' . $this->image->baseName . '.'  . $this->image->extension;
+            $this->image->saveAs($path);
+            //@unlink($path);//Удаление оригинала
+            return true;
+        }else{
+            //$errors = $this->getErrors();
+            //var_dump($errors);
+            return false;
+        }
+    }
 
+    public function isAllowed()
+    {
+        return $this->status;
+    }
 
+    public function allow()
+    {
+        $this->status = self::STATUS_ALLOW;
+        return $this->save(false);
+    }
 
-
-
-
-
+    public function disallow()
+    {
+        $this->status = self::STATUS_DISALLOW;
+        return $this->save(false);
+    }
 
 }

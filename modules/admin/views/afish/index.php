@@ -18,35 +18,35 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Создать Афишу', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            //'id',
             'name',
             'description:html',
             'content:html',
-            //'phone:html',
-            //'image',
             [
                 'format' =>'html',
                 'label'=> 'image',
-                'value'=>function($data){
+                'value'=>function($data) {
                     return Html::img($data->getImage(),['width'=>200]);
                 }
             ],
             [
                 'attribute'=>'catalog_id',
-                'value'=> function($data){
+                'value'=> function($data) {
                     return $data->catalog->title;
                 },
             ],
-
-            // 'viewed',
-            // 'catalog_id',
-
+            [
+                'attribute'=>'status',
+                'value'=> function($data) {
+                    return $data->status === 1 ? 'Опубликован' : 'Отключен';
+                },
+            ],
+            'date',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

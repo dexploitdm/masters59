@@ -19,18 +19,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </section>
 
-<!-- Content -->
 <div id="content">
-
-    <!-- Latest News -->
     <section class="latest-news blog padding-top-100 padding-bottom-100">
         <div class="container">
-
-            <!-- Blog Side -->
             <div class="row">
                 <div class="col-md-9">
                    <?php foreach($afishes as $afish):?>
-                    <!-- News 1 -->
                     <article class="margin-bottom-50"> <a href="#"> </a>
                         <div class="news-detail">
                             <div class="row">
@@ -56,20 +50,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]);
                     ?>
                 </div>
-
-
-                <!-- Side Bar -->
                 <div class="col-md-3">
                     <div class="side-bar">
-
-                        <!-- Categories -->
                         <h5 class="font-alegreya ">Каталоги услуг</h5>
                         <ul class="cate bg-defult">
                             <?= \app\components\MenuWidget::widget(['tpl'=>'menu'])?>
                         </ul>
-
-
-                        <!-- Popular Post -->
                         <h5 class="font-alegreya">Популярные исполнители</h5>
                         <div class="papu-post margin-t-40">
                             <ul class="bg-defult">
@@ -85,7 +71,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-
                         <h5 class="font-alegreya">Последние афиши</h5>
                         <div class="papu-post margin-t-40">
                             <ul class="bg-defult">
@@ -101,8 +86,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <?php endforeach; ?>
                             </ul>
                         </div>
-
-
                     </div>
                 </div>
             </div>

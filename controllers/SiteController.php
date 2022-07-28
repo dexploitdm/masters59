@@ -139,6 +139,7 @@ class SiteController extends Controller
 
     public function actionCatalog($id)
     {
+        // ::find()->where(['status'=>'1'])->limit(10)->all();
         $data = Catalog::getAfishesByCatalog($id);
         $afish = Afish::findOne($id);
         $cataloges = Catalog::getAll();
@@ -233,23 +234,24 @@ class SiteController extends Controller
             'cataloges'=>$cataloges
         ]);
     }
-    public function actionCreate()
-    {
-        $model = new Afish();
 
-        if(Yii::$app->request->isPost)
-        {
-            $model->load(Yii::$app->request->post());
-            //var_dump($model);
-
-            if($model->saveArticle())
-            {
-                Yii::$app->getSession()->setFlash('afish', 'Ваш запрос отправлен. Ожидайте одобрения на публикацию');
-                return $this->redirect(['site/afish']);
-            }
-        }
-
-    }
+//    public function actionCreateAfish()
+//    {
+//        $model = new Afish();
+//
+//        if(Yii::$app->request->isPost)
+//        {
+//            $model->load(Yii::$app->request->post());
+//            //var_dump($model);
+//
+//            if($model->saveArticle())
+//            {
+//                Yii::$app->getSession()->setFlash('afish', 'Ваш запрос отправлен. Ожидайте одобрения на публикацию');
+//                return $this->redirect(['site/afish']);
+//            }
+//        }
+//
+//    }
 
 
 

@@ -132,9 +132,9 @@ class AfishController extends Controller
         $model = new ImageUpload;
         if(Yii::$app->request->isPost){
             $afish = $this->findModel($id);
-//Загрузка файла
+            //Загрузка файла
             $file = UploadedFile::getInstance($model, 'image');
-//Передаем его в модель методу uploadFile
+            //Передаем его в модель методу uploadFile
             if($afish->saveImage($model->uploadFile($file, $afish->image)))
             {
                 return $this->redirect(['view', 'id'=>$afish->id]);
@@ -172,7 +172,23 @@ class AfishController extends Controller
         ]);
     }
 
+    public function actionAllow($id)
+    {
+        $afish = Afish::findOne($id);
+        if($afish->allow())
+        {
+            return $this->redirect(['index']);
+        }
 
+    }
+    public function actionDisallow($id)
+    {
+        $afish = Afish::findOne($id);
+        if($afish->disallow())
+        {
+            return $this->redirect(['index']);
+        }
+    }
 
 
 

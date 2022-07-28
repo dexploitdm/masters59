@@ -11,12 +11,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <section class="latest-news blog blog-single padding-top-100 padding-bottom-100">
         <div class="container">
             <div class="row">
+                <div>Здесь какое нибудь описание</div>
                 <div class="col-md-9">
                     <div>
                         <h2>Отзывы о нашем сервисе  </h2>
                     </div>
                     <div class="comments">
-
                         <?php if(!empty($zovs)): ?>
                             <?php foreach($zovs as $zov ): ?>
                                 <ul class="media-list">
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php endif; ?>
 
                         <?php if(!Yii::$app->user->isGuest):?>
-                            <div class="leave-comment"><!--leave comment-->
+                            <div class="leave-comment">
                                 <h4>Написать отзыв</h4>
                                 <?php if(Yii::$app->session->getFlash('zovs')):?>
                                     <div class="alert alert-success" role="alert">
@@ -51,9 +51,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </div>
                                 <button type="submit" class="btn send-btn">Отправить</button>
                                 <?php \yii\widgets\ActiveForm::end();?>
-                            </div><!--end leave comment-->
+                            </div>
                         <?php else : ?>
-                        <div class="alert alert-success"><!--leave comment-->
+                        <div class="alert alert-success">
                         <h6>Добавить отзыв могут только авторизованные пользователи</h6>
                     </div>
                         <?php endif; ?>

@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -15,6 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
+        Публикация:
+        <?php if($model->isAllowed()):?>
+            <a class="btn btn-warning" href="<?= Url::toRoute(['afish/disallow', 'id'=>$model->id]);?>">Запретить</a>
+        <?php else:?>
+            <a class="btn btn-success" href="<?= Url::toRoute(['afish/allow', 'id'=>$model->id]);?>">Разрешить</a>
+        <?php endif?>
         <?= Html::a('Редактировать', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Загрузка изображения', ['set-image', 'id' => $model->id], ['class' => 'btn btn-default']) ?>
         <?= Html::a('Выбор каталога', ['set-catalog', 'id' => $model->id], ['class' => 'btn btn-default']) ?>
