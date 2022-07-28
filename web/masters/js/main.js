@@ -8,50 +8,6 @@ $(".sticky").sticky({topSpacing:0});
 /* 	LOADER
 /*-----------------------------------------------------------------------------------*/
 $("#loader").delay(500).fadeOut("slow");
-/*-----------------------------------------------------------------------------------
-    TESTNMONIALS STYLE 1
-/*-----------------------------------------------------------------------------------*/
-$('#carousel').flexslider({
-    animation: "slide",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    itemWidth: 122,
-    itemMargin: 5,
-    asNavFor: '#slider'
-});
-$('#slider').flexslider({
-    animation: "fade",
-    controlNav: false,
-    animationLoop: false,
-    slideshow: false,
-    sync: "#carousel"
-  });
-  
-  
-$('.testi-slides-flex').flexslider({
-   animation: "slide"
-});
-
-/*-----------------------------------------------------------------------------------*/
-/* 	SLIDER REVOLUTION
-/*-----------------------------------------------------------------------------------*/
-jQuery('.tp-banner-fix').show().revolution({
-	dottedOverlay:"none",
-	delay:10000,
-	startwidth:1170,
-	startheight:670,
-	navigationType:"bullet",
-	navigationArrows:"solo",
-	navigationStyle:"preview4",
-	parallax:"mouse",
-	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],												
-	keyboardNavigation:"on",						
-	fullWidth:"off",
-	fullScreen:"off"
-});
-/*-----------------------------------------------------------------------------------*/
 /*	ISOTOPE PORTFOLIO
 /*-----------------------------------------------------------------------------------*/
 var $container = $('.port-wrap .items');
