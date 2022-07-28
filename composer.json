@@ -17,7 +17,8 @@
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.5",
         "yiisoft/yii2-bootstrap": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0"
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "costa-rico/yii2-images": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -28,6 +29,12 @@
         "codeception/verify": "~0.3.1",
         "codeception/specify": "~0.4.3"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/CostaRico/yii2-images.git"
+        }
+    ],
     "config": {
         "process-timeout": 1800
     },
