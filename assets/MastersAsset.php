@@ -22,7 +22,6 @@ class MastersAsset extends AssetBundle
         'web/masters/css/font-awesome.min.css',
         'web/masters/css/main.css',
         'web/masters/css/responsive.css',
-        'web/masters/rs-plugin/css/settings.css',
         'web/masters/swiper/swiper-bundle.min.css',
         'web/masters/css/style.css',
 
@@ -39,9 +38,8 @@ class MastersAsset extends AssetBundle
         'web/masters/js/vendors/owl.carousel.min.js',
         'web/masters/js/vendors/jquery.sticky.js',
         'web/masters/js/vendors/modernizr.js',
-        'web/masters/rs-plugin/js/jquery.themepunch.tools.min.js',
-        'web/masters/rs-plugin/js/jquery.themepunch.revolution.min.js',
         'web/masters/swiper/swiper-bundle.min.js',
+        'https://kit.fontawesome.com/9df500f697.js',
         'web/masters/js/main.js',
     ];
     public $depends = [
