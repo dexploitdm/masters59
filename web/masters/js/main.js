@@ -103,6 +103,42 @@ var swiper = new Swiper(".slider-home", {
 		el: ".swiper-pagination",
 	},
 });
+function runScripts() {
+	/*-----------------------------------------------------------------------------------*/
+	/*	Mask
+    /*-----------------------------------------------------------------------------------*/
+	var element = document.getElementById('d-mask-phone');
+	if(element) {
+		var maskOptions = {
+			mask: '+{7}(000)000-00-00'
+		};
+		var mask = IMask(element, maskOptions);
+	}
+	/*-----------------------------------------------------------------------------------*/
+	/*	Upload
+    /*-----------------------------------------------------------------------------------*/
+	$('.upload-block-box').click(function() {
+		console.log('sss')
+		$('.js-upload').click();
+	});
+	$('.js-upload').change(function() {
+		readURL(this);
+	});
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
 
+			reader.onload = function(e) {
+				$('.prevImage').attr('src', e.target.result).css('display', 'block');
+			}
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+}
+$(document).ready(function() {
+	runScripts();
+});
 
 
