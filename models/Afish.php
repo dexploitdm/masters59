@@ -159,11 +159,21 @@ class Afish extends \yii\db\ActiveRecord
         if ($this->validate()){
             $path = 'uploads/afish/' . $this->image->baseName . '.'  . $this->image->extension;
             $this->image->saveAs($path);
-            //@unlink($path);//Удаление оригинала
+            //@unlink($path);
             return true;
         }else{
             //$errors = $this->getErrors();
             //var_dump($errors);
+            return false;
+        }
+    }
+
+    public function deleteCover() {
+        if ($this->image){
+            $path = 'uploads/afish/' . $this->image;
+            @unlink($path);
+            return true;
+        }else{
             return false;
         }
     }

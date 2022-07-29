@@ -133,8 +133,11 @@ class AfishController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
+        if ( $model->delete()){
+            $model->deleteCover();
+        }
         return $this->redirect(['main']);
     }
 
