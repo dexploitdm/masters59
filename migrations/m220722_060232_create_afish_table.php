@@ -20,7 +20,7 @@ class m220722_060232_create_afish_table extends Migration
             'phone' => $this->string(255),
             'content' => $this->text(),
             'image' => $this->string(),
-            'viewed' => $this->integer(),
+            'viewed' => $this->integer()->defaultValue(0),
             'catalog_id' => $this->integer(),
             'date' => $this->dateTime(),
             'status' => $this->integer()->defaultValue(0),
