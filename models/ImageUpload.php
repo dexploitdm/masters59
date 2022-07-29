@@ -31,17 +31,17 @@ class ImageUpload extends Model {
             // что бы она сохранила ее имя в базе
         }
     }
-//Выбор каталога
+    //Выбор каталога
     private function getFolder()
     {
-        return Yii::getAlias('@web') . 'uploads/';
+        return Yii::getAlias('@web') . 'uploads/afish/';
     }
-//Генерация
+    //Генерация
     private function generateFilename()
     {
         return strtolower(md5(uniqid($this->image->baseName)).'.'.$this->image->extension);
     }
-//Удаление текущего изображения
+    //Удаление текущего изображения
     public function deleteCurrentImage($currentImage)
     {
         if($this->fileExists($currentImage))
@@ -56,7 +56,7 @@ class ImageUpload extends Model {
             return file_exists($this->getFolder() .$currentImage);
         }
     }
-//Загрузка картинки
+    //Загрузка картинки
     public function saveImage()
     {
         //Генерируем название картинки
