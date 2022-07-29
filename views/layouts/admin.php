@@ -50,12 +50,12 @@ AppAsset::register($this);
                 <li>
                     <a data-mae-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
                 </li>
-                <li>
-                    <a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>
-                </li>
-                <li>
-                    <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
-                </li>
+<!--                <li>-->
+<!--                    <a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>-->
+<!--                </li>-->
             </ul>
         </li>
         <li class="top-menu__alerts" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
@@ -67,9 +67,9 @@ AppAsset::register($this);
             </a>
 
             <ul class="dropdown-menu pull-right dropdown-menu--icon">
-                <li>
-                    <a href="#"><i class="zmdi zmdi-account"></i> Профиль</a>
-                </li>
+<!--                <li>-->
+<!--                    <a href="#"><i class="zmdi zmdi-account"></i> Профиль</a>-->
+<!--                </li>-->
                 <li>
                     <a href="/" target="_blank"><i class="zmdi zmdi-settings"></i> Перейти на сайт</a>
                 </li>

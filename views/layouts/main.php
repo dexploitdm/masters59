@@ -77,16 +77,16 @@ MastersAsset::register($this);
                             </ul>
                         </li>
                         <!--======= SEARCH ICON =========-->
-                        <li class="search-nav right"><a href="#."><i class="fa fa-search"></i></a>
-                            <ul class="dropdown">
-                                <li>
-                                    <form>
-                                        <input type="search" class="form-control" placeholder="Enter Your Keywords..." required>
-                                        <button type="submit"> SEARCH </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
+<!--                        <li class="search-nav right"><a href="#."><i class="fa fa-search"></i></a>-->
+<!--                            <ul class="dropdown">-->
+<!--                                <li>-->
+<!--                                    <form>-->
+<!--                                        <input type="search" class="form-control" placeholder="Enter Your Keywords..." required>-->
+<!--                                        <button type="submit"> SEARCH </button>-->
+<!--                                    </form>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
                     </ul>
                 </nav>
             </div>
