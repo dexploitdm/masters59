@@ -90,9 +90,6 @@ header .logo {
 	text-align: center;
 	margin-bottom: 20px;
 }
-.ownmenu {
-	width: 100%;
-}
 .testi-slides-flex {
 	width: 100%;
 }
@@ -129,7 +126,7 @@ header nav .ownmenu li.search-nav a {
 	text-align: left;
 }
 .ownmenu > li.showhide {
-	text-align: center;
+	text-align: right;
 }
 .ownmenu ul.dropdown, .ownmenu ul.dropdown li ul.dropdown {
 	float: left;
