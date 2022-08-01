@@ -24,7 +24,11 @@ class MastersAsset extends AssetBundle
         'web/masters/css/responsive.css',
         'web/masters/swiper/swiper-bundle.min.css',
         'web/masters/css/style.css',
-
+        [
+            'href' => 'web/masters/favicon.png',
+            'rel' => 'icon',
+            'sizes' => '32x32',
+        ],
     ];
     public $js = [
         'web/masters/js/vendors/jquery/jquery.min.js',
