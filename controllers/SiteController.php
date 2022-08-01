@@ -122,7 +122,7 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
+            Yii::$app->session->setFlash('contactFormSubmitted', "Ваш запрос отправлен. Наш специалист с Вами скоро свяжется");
 
             return $this->refresh();
         }
@@ -235,23 +235,6 @@ class SiteController extends Controller
         ]);
     }
 
-//    public function actionCreateAfish()
-//    {
-//        $model = new Afish();
-//
-//        if(Yii::$app->request->isPost)
-//        {
-//            $model->load(Yii::$app->request->post());
-//            //var_dump($model);
-//
-//            if($model->saveArticle())
-//            {
-//                Yii::$app->getSession()->setFlash('afish', 'Ваш запрос отправлен. Ожидайте одобрения на публикацию');
-//                return $this->redirect(['site/afish']);
-//            }
-//        }
-//
-//    }
 
 
 
