@@ -94,7 +94,6 @@ img {
 	-ms-transition: 0.4s ease-in-out;
 	-o-transition: 0.4s ease-in-out;
 	transition: 0.4s ease-in-out;
-	display: inline-block !important;
 }
 ul {
 	margin-bottom: 0px;
@@ -337,6 +336,7 @@ header {
 	padding: 0;
 }
 .header-info {
+	margin-top: -1px;
 	border-top:4px solid #222935;
 }
 header .logo {
@@ -610,6 +610,7 @@ header.coporate-header .ownmenu > li > .megamenu {
 	color:#fff;
 	text-transform:uppercase;
 	letter-spacing:2px;
+	text-shadow: 4px 4px 8px rgba(150, 150, 150, 1);
 }
 .sub-banner .breadcrumb{
 	background:none;
@@ -1479,11 +1480,12 @@ footer .news-letter button{
 }
 .footer-info .quote .form-control{
 	background:none;
-	border-radius:0px;
+	border-radius:0;
 	border:1px solid #3f4753;
 	margin-bottom:20px;
 	height:40px;
 	font-size:13px;
+	color: #ffffff;
 }
 .footer-info .quote textarea.form-control{
 	height:80px;
@@ -1666,6 +1668,9 @@ footer .news-letter button{
 	color: #fff;
 	box-shadow: 3px -1px 10px rgb(0 0 0 / 50%);
 }
+.afish-status a {
+	color: #fff;
+}
 .afish-status.allow {
 	background-color: #ff6326;
 }
@@ -1680,4 +1685,127 @@ footer .news-letter button{
 }
 .afish .news-detail:hover {
 	box-shadow: 0px 0px 16px 1px rgb(0 0 0 / 20%);
+}
+.afish.view {
+	max-width: 750px;
+	margin: auto;
+}
+.afish.view .field-imageupload-image {
+	display: none;
+}
+.afish.view .form-group {
+	text-align: center;
+	margin-top: 59px;
+}
+.upload-block {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.upload-block .prevImage {
+	display: none;
+	max-height: 148px;
+	border-radius: 20px;
+}
+.upload-block-box {
+	border: 4px dashed #ff6c3a;
+	width: 100%;
+	max-width: 170px;
+	text-align: center;
+	border-radius: 20px;
+	cursor: pointer;
+	transition: .3s;
+}
+.upload-block-box i {
+	font-size: 120px;
+	color: #ff6c3a;
+	padding: 10px 0;
+	transition: .3s;
+}
+.upload-block-box:hover {
+	border-color: #222935;
+}
+.upload-block-box:hover i {
+	color: #222935;
+}
+.afish-box {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 1em;
+}
+@media (max-width: 1200px) {
+	.afish-box {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media (max-width: 980px) {
+	.afish {
+		padding: 0 20px;
+	}
+}
+@media (max-width: 768px) {
+	.afish-box {
+		grid-template-columns: 1fr;
+	}
+}
+.sub-banner.d4 {
+	background: url(../images/bg/kr.jpg) fixed center center no-repeat;
+	background-size: cover;
+}
+.sub-banner.d1 {
+	background: url(../images/bg/cleaning.jpg) fixed center center no-repeat;
+	background-size: cover;
+}
+.sub-banner.d2 {
+	background: url(../images/bg/express.jpg) fixed center center no-repeat;
+	background-size: cover;
+}
+.sub-banner.d3 {
+	background: url(../images/bg/tech.jpg) fixed center center no-repeat;
+	background-size: cover;
+}
+.sub-banner.d5 {
+	background: url(../images/bg/med.jpg) fixed center center no-repeat;
+	background-size: cover;
+}
+.sub-banner.d6 {
+	background: url(../images/bg/raz.jpg) fixed center center no-repeat;
+	background-size: cover;
+}
+.sub-banner.d7 {
+	background: #222935;
+}
+.sub-banner.d7 h2 {
+	text-shadow: none;
+}
+.footer-logo {
+	background-color: white;
+	border-radius: 50px;
+}
+.footer-info .personal-info li a {
+	color: #969ea7;
+}
+.footer-info .personal-info li a:hover {
+	color: #ff6c3a;
+}
+.callback-form {
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+	margin-bottom: 38px;
+	position: relative;
+}
+.callback-form:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: 0;
+	top: 50px;
+	border: 15px solid;
+	border-color: #fff transparent transparent #fff;
+}
+.footer-info .quote .control-label {
+	display: none;
 }

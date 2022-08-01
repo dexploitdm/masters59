@@ -106,7 +106,7 @@ AppAsset::register($this);
 
                     <a href="" class="list-group-item media">
                         <div class="pull-left">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/5.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/5.jpg" alt="">
                         </div>
                         <div class="media-body">
                             <div class="list-group__heading">Candice Barnes</div>
@@ -116,7 +116,7 @@ AppAsset::register($this);
 
                     <a href="" class="list-group-item media">
                         <div class="pull-left">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/3.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/3.jpg" alt="">
                         </div>
                         <div class="media-body">
                             <div class="list-group__heading">Jeannette Lawson</div>
@@ -126,7 +126,7 @@ AppAsset::register($this);
 
                     <a href="" class="list-group-item media">
                         <div class="pull-left">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/4.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/4.jpg" alt="">
                         </div>
                         <div class="media-body">
                             <div class="list-group__heading">Darla Mckinney</div>
@@ -136,7 +136,7 @@ AppAsset::register($this);
 
                     <a href="" class="list-group-item media">
                         <div class="pull-left">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/2.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/2.jpg" alt="">
                         </div>
                         <div class="media-body">
                             <div class="list-group__heading">Rudolph Perez</div>
@@ -175,7 +175,7 @@ AppAsset::register($this);
 
                     <a href="" class="list-group-item media">
                         <div class="pull-right">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/4.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/4.jpg" alt="">
                         </div>
                         <div class="media-body">
                             <div class="list-group__heading">Darla Mckinney</div>
@@ -185,7 +185,7 @@ AppAsset::register($this);
 
                     <a href="" class="list-group-item media">
                         <div class="pull-right">
-                            <img class="avatar-img" src="/adminTheme/demo/img/profile-pics/2.jpg" alt="">
+                            <img class="avatar-img" src="<?php echo Yii::getAlias('@adminTheme'); ?>/demo/img/profile-pics/2.jpg" alt="">
                         </div>
                         <div class="media-body">
                             <div class="list-group__heading">Rudolph Perez</div>
@@ -292,13 +292,13 @@ AppAsset::register($this);
 
 
 <?php $this->endBody() ?>
-<?php $this->registerJsFile('/ckeditor/ckeditor.js'); ?>
-<?php $this->registerJsFile('/ckfinder/ckfinder.js'); ?>
+<?php //$this->registerJsFile('/ckeditor/ckeditor.js'); ?>
+<?php //$this->registerJsFile('/ckfinder/ckfinder.js'); ?>
 <script>
-    $(document).ready(function(){
-        var editor = CKEDITOR.replaceAll();
-        CKFinder.setupCKEditor( editor );
-    })
+    // $(document).ready(function(){
+    //     var editor = CKEDITOR.replaceAll();
+    //     CKFinder.setupCKEditor( editor );
+    // })
 </script>
 
 </body>

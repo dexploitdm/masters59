@@ -40,6 +40,7 @@ class MastersAsset extends AssetBundle
         'web/masters/js/vendors/modernizr.js',
         'web/masters/swiper/swiper-bundle.min.js',
         'https://kit.fontawesome.com/9df500f697.js',
+        'web/masters/js/imask.js',
         'web/masters/js/main.js',
     ];
     public $depends = [

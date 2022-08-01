@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?php foreach($zovs as $zov ): ?>
                                 <ul class="media-list">
                                     <li class="media">
-                                        <div class="media-left"> <a href="#"> <img class="media-object"src="<?= $zov->user->image;?>" alt=""> </a> </div>
+                                        <div class="media-left"> <a href="#"> <img class="media-object" src="/<?= $zov->user->image;?>" alt=""> </a> </div>
                                         <div class="media-body light-gray-bg">
                                             <h6 class="media-heading"><?= $zov->user->name; ?><span><?= $zov->getDate();?></span></h6>
                                             <p><?= $zov->text; ?></p>

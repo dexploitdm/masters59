@@ -3,6 +3,7 @@
 
 namespace app\controllers;
 use app\models\Catalog;
+use app\models\ImageUpload;
 use app\models\User;
 use Yii;
 use app\models\Afish;
@@ -72,6 +73,19 @@ class AfishController extends Controller
     }
 
     /**
+     * Displays a single Afish model.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionView($id)
+    {
+        $afish = Afish::findOne($id);
+        return $this->render('view', [
+            'afish' => $afish
+        ]);
+    }
+
+    /**
      * Creates a new Afish model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -80,19 +94,13 @@ class AfishController extends Controller
     {
         $model = new Afish();
 
-        if(Yii::$app->request->isPost)
-        {
-            $model->load(Yii::$app->request->post());
-            $model->image = UploadedFile::getInstance($model, 'image');
-            if ($model->image){
-                $model->upload();
-            }
-
-            if($model->saveArticle())
-            {
-                Yii::$app->getSession()->setFlash('afish', 'Ваш запрос отправлен. Ожидайте одобрения на публикацию');
-                return $this->redirect(['afish/main']);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->saveArticle()) {
+            Yii::$app->session->setFlash('afish', "Запись добавлена. Ожидайте проверку на публикацию");
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
     }
 
@@ -107,15 +115,8 @@ class AfishController extends Controller
         $model = $this->findModel($id);
         $cataloges = ArrayHelper::map(Catalog::find()->all(), 'id','title');
         $selectedCatalog = $model->catalog->id;
-        if ($model->load(Yii::$app->request->post())) {
-            $model->image = UploadedFile::getInstance($model, 'image');
-            if ($model->image){
-                $model->upload();
-            }
-            //unset($model->image);
-            if( $model->saveArticle()){
-                return $this->redirect(['main']);
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -141,6 +142,23 @@ class AfishController extends Controller
         return $this->redirect(['main']);
     }
 
+    public function actionSetImage($id)
+    {
+        $model = new ImageUpload;
+        if(Yii::$app->request->isPost){
+            $afish = $this->findModel($id);
+            //Загрузка файла
+            $file = UploadedFile::getInstance($model, 'image');
+            //Передаем его в модель методу uploadFile
+            if($afish->saveImage($model->uploadFile($file, $afish->image)))
+            {
+                return $this->redirect(['view', 'id'=>$afish->id]);
+            }
+        }
+
+        //Отображение вида с формы, где будем отображать картинку
+        return $this->render('image', ['model'=>$model]);
+    }
 
 
 }

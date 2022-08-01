@@ -34,14 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-                        <?= $form->field($model, 'phone')->textInput(['maxlength' => true])  ?>
+                        <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'id' => 'd-mask-phone'])  ?>
 
                         <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
                         <?= $form->field($model, 'catalog_id')->dropDownList(ArrayHelper::map(\app\models\Catalog::find()->all(), 'id', 'title')) ?>
-
-                        <?= $form->field($model, 'image')->fileInput() ?>
-
+                        
                     </div>
                 </div>
 

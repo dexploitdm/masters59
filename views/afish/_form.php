@@ -19,14 +19,12 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-            <?= $form->field($model, 'phone')->textInput(['maxlength' => true])  ?>
+            <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'id' => 'd-mask-phone'])  ?>
 
             <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
             <?= $form->field($model, 'catalog_id')->dropDownList($cataloges) ?>
             <!--                        --><?//= Html::dropDownList('catalog_id','', $cataloges,['class'=>'form-control']) ?>
-
-            <?= $form->field($model, 'image')->fileInput() ?>
 
         </div>
     </div>

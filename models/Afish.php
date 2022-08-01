@@ -84,7 +84,7 @@ class Afish extends \yii\db\ActiveRecord
 
     public function getImage()
     {
-        return ($this->image) ? '/web/uploads/afish/' . $this->image : '/no-image.png';
+        return ($this->image) ? '/web/uploads/afish/' . $this->image : '/web/no-image.png';
     }
 
     public function deleteImage()

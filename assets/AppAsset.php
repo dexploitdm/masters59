@@ -30,7 +30,7 @@ class AppAsset extends AssetBundle
         'web/adminTheme/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
         'web/adminTheme/vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js',
         'web/adminTheme/vendors/bower_components/moment/min/moment.min.js"',
-        'web/adminTheme/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js',
+//        'web/adminTheme/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js',
         'web/adminTheme/vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js',
         'web/adminTheme/vendors/bower_components/salvattore/dist/salvattore.min.js',
         'web/adminTheme/vendors/bower_components/flot/jquery.flot.js',
@@ -44,6 +44,8 @@ class AppAsset extends AssetBundle
         'web/adminTheme/demo/js/misc.js',
         'web/adminTheme/demo/js/sparkline-charts.js',
         'web/adminTheme/demo/js/calendar.js',
+        'web/masters/js/imask.js',
+        'web/adminTheme/js/main.js',
         'web/adminTheme/js/app.min.js',
     ];
     public $depends = [
