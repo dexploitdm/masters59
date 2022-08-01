@@ -7,15 +7,19 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 $this->title = 'Каталоги';
 $this->params['breadcrumbs'][] = $this->title;
+$catalog = '';
+$catalogID = '';
 ?>
+<?php foreach($afishes as $afish):?>
+    <?php $catalog = $afish->catalog->title ?>  </h2>
+    <?php $catalogID = $afish->catalog->id ?>  </h2>
+<?php endforeach; ?>
 <!--======= SUB BANNER =========-->
-<section class="sub-banner">
+<section class="sub-banner d<?php echo $catalogID; ?>">
     <div class="container">
-        <?php foreach($afishes as $afish):?>
         <div class="position-center-center">
-            <h2><?= $afish->catalog->title?>  </h2>
+            <h2><?php echo $catalog; ?></h2>
         </div>
-        <?php endforeach; ?>
     </div>
 </section>
 
