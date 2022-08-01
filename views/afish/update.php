@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\ArrayHelper;
-use yii\helpers\Html;
+use mihaildev\ckeditor\CKEditor;
 
 $this->title = 'Добавить объявление';
 $this->params['breadcrumbs'][] = $this->title;
@@ -36,7 +36,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'id' => 'd-mask-phone'])  ?>
 
-                        <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+                        <?php
+                            echo $form->field($model, 'content')->widget(CKEditor::className(),[
+                                'editorOptions' => [
+                                    'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                                    'inline' => false, //по умолчанию false
+                                ],
+                            ]);
+                        ?>
 
                         <?= $form->field($model, 'catalog_id')->dropDownList(ArrayHelper::map(\app\models\Catalog::find()->all(), 'id', 'title')) ?>
                         

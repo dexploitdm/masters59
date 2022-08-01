@@ -1,12 +1,11 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use yii\widgets\MaskedInput;
-
+use mihaildev\ckeditor\CKEditor;
 /* @var $this yii\web\View */
 /* @var $model app\models\Afish */
 /* @var $form yii\widgets\ActiveForm */
+
+
 ?>
 
 <?php $form = \yii\widgets\ActiveForm::begin([
@@ -21,7 +20,14 @@ use yii\widgets\MaskedInput;
 
             <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'id' => 'd-mask-phone'])  ?>
 
-            <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+            <?php
+                echo $form->field($model, 'content')->widget(CKEditor::className(),[
+                    'editorOptions' => [
+                        'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                        'inline' => false, //по умолчанию false
+                    ],
+                ]);
+            ?>
 
             <?= $form->field($model, 'catalog_id')->dropDownList($cataloges) ?>
             <!--                        --><?//= Html::dropDownList('catalog_id','', $cataloges,['class'=>'form-control']) ?>
