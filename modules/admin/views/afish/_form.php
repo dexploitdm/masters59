@@ -1,5 +1,6 @@
 <?php
 
+use mihaildev\ckeditor\CKEditor;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
@@ -19,9 +20,14 @@ use yii\widgets\MaskedInput;
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'id' => 'd-mask-phone'])  ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-
-
+    <?php
+        echo $form->field($model, 'content')->widget(CKEditor::className(),[
+            'editorOptions' => [
+                'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+                'inline' => false, //по умолчанию false
+            ],
+        ]);
+    ?>
 
     <button class="btn btn-default btn--icon"><i class="zmdi zmdi-check"></i></button>
 
