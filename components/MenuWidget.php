@@ -47,10 +47,7 @@ class MenuWidget extends Widget{
     protected function getTree(){
         $tree = [];
         foreach ($this->data as $id=>&$node) {
-            if (!$node['parent_id'])
-                $tree[$id] = &$node;
-            else
-                $this->data[$node['catalog_id']]['childs'][$node['id']] = &$node;
+            $tree[$id] = &$node;
         }
         return $tree;
     }

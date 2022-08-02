@@ -141,7 +141,7 @@ class Afish extends \yii\db\ActiveRecord
         return $this->getComments()->where(['status'=>1])->count();
     }
 
-    public function getPopular()
+    public static function getPopular()
     {
         return Afish::find()->orderBy('viewed desc')->limit(3)->all();
     }
