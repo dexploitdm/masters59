@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php foreach($comments as $comment): ?>
                 <tr>
                     <td><?= $comment->id ?></td>
-                    <td><?= $comment->afish->name ?></td>
+                    <td><?= $comment->afish_id ?></td>
                     <td><?= $comment->user->name ?></td>
                     <td><?= $comment->text ?></td>
                     <td>

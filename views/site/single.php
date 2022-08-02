@@ -34,7 +34,7 @@ $this->title = 'Masters59 | ' .$afish->name;
                                         <h6 class="media-heading"><?= $comment->user->name; ?><span><?= $comment->getDate();?></span></h6>
                                         <p><?= $comment->text; ?>
                                         </p>
-                                        <a href="#" class="reply">Reply</a> </div>
+                                    </div>
                                 </li>
                             </ul>
                         <?php endforeach; ?>

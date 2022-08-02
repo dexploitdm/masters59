@@ -9,6 +9,7 @@ class ZovsController extends Controller
     public function actionIndex()
     {
         $zovs = Zovs::find()->all();
+        print_r($zovs);
         return $this->render('index',['zovs'=>$zovs]);
     }
 

@@ -89,7 +89,7 @@ class Comment extends \yii\db\ActiveRecord
         return Yii::$app->formatter->asDate($this->date);
     }
 
-    public function getRecentCom()
+    public static function getRecentCom()
     {
         return Comment::find()->orderBy('date asc')->limit(5)->all();
     }

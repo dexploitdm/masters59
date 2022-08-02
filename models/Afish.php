@@ -150,7 +150,7 @@ class Afish extends \yii\db\ActiveRecord
         return Yii::$app->formatter->asDate($this->date);
     }
 
-    public function getRecent()
+    public static function getRecent()
     {
         return Afish::find()->orderBy('date asc')->limit(3)->all();
     }

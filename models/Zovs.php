@@ -77,7 +77,7 @@ class Zovs extends \yii\db\ActiveRecord
         return $this->save(false);
     }
 
-    public function getRecentOtz()
+    public static function getRecentOtz()
     {
         return Zovs::find()->orderBy('date asc')->limit(5)->all();
     }

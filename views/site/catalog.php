@@ -95,7 +95,7 @@ $catalogID = '';
                                         </div>
                                         <div class="media-body"><a class="media-heading"
                                                                    href="<?= Url::toRoute(['site/view', 'id' => $afish->id]); ?>">
-                                                <?= $afish->description; ?></a> <span><?= $afish->getDate(); ?></span>
+                                                <?= $afish->description; ?></a> <span>1<?= $afish->getDate(); ?></span>
                                         </div>
                                     </li>
                                 <?php endforeach; ?>
