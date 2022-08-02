@@ -53,7 +53,7 @@ background:#ff6c3a;
    100% { transform:scale(1); }
 }
 .ownmenu{width:auto;padding:0;margin:0;float:right;list-style:none;}
-.ownmenu li{display:inline-block;float:left;}
+.ownmenu li{display:inline-block;}
 .ownmenu a{-o-transition:all .3s linear;-webkit-transition:all .3s linear;-moz-transition:all .3s linear;transition:all .3s linear;outline:none;z-index:10;}
 .ownmenu li{}
 .ownmenu ul.dropdown, .ownmenu ul.dropdown li ul.dropdown{list-style:none;margin:0;padding:0;display:none;position:absolute;z-index:99;padding-left:0px;width:250px;background:none;padding:20px 35px;}

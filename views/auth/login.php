@@ -4,43 +4,51 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\LoginForm */
 
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 $this->title = 'Авторизация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<section class="latest-news blog blog-single padding-top-1000 padding-bottom-100">
-    <div class="container">
-        <div class="row">
-                <h1><?= Html::encode($this->title) ?></h1>
+<section class="auth-block">
+    <div class="auth-form">
+        <h1><?= Html::encode($this->title) ?></h1>
 
-                <p>Пожалуйста введите свой Email и пароль</p>
+        <p>Пожалуйста введите свой Email и пароль или войдите через VK</p>
 
-            <?php $form = ActiveForm::begin([
-                'id' => 'login-form',
-                'layout' => 'horizontal',
-                'fieldConfig' => [
-                    'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-                    'labelOptions' => ['class' => 'col-lg-1 control-label'],
-                ],
-            ]); ?>
+        <?php $form = ActiveForm::begin([
+            'id' => 'login-form',
+            'fieldConfig' => [
+                'template' => "{label}\n<div>{input}</div>\n<div>{error}</div>",
+                'labelOptions' => ['class' => 'control-label'],
+            ],
+        ]); ?>
 
-            <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
-            <?= $form->field($model, 'rememberMe')->checkbox([
-                'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            ]) ?>
+        <?= $form->field($model, 'rememberMe')->checkbox([
+            'template' => "<div>{input} {label}</div>\n<div>{error}</div>",
+        ]) ?>
 
-            <div class="form-group">
-                <div class="col-lg-offset-1 col-lg-11">
-                    <?= Html::submitButton('Вход', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
+        <div class="form-group">
+            <div class="auth-form-btn">
+                <?= Html::submitButton('Вход', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
             </div>
-
         </div>
+
+        <?php ActiveForm::end(); ?>
+
+        <p>Еще не зарегистрированы?</p>
+        <div class="form-group">
+            <div class="auth-form-btn">
+                <a class="btn btn-orange" href="<?= Url::toRoute(['auth/signup']) ?>">Регистрация</a>
+            </div>
+        </div>
+        <p>После регистрации вы получите доступ к публикации своих услуг</p>
+
         <div class="col-md-1">
             <!-- Put this script tag to the <head> of your page -->
             <script type="text/javascript" src="//vk.com/js/api/openapi.js?146"></script>
@@ -57,11 +65,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </section>
-
-
-
-
-
-    <?php ActiveForm::end(); ?>
-</section>
-

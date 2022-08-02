@@ -60,13 +60,13 @@ class Afish extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Имя',
+            'name' => 'Имя/Название услуги',
             'description' => 'Краткое описание',
             'phone' => 'Номер телефона',
-            'content' => 'Контент',
+            'content' => 'Основной контент',
             'image' => 'Изображение',
             'viewed' => 'Просмотры',
-            'catalog_id' => 'Каталог',
+            'catalog_id' => 'Категория услуги',
         ];
     }
 

@@ -1,26 +1,24 @@
 <?php
 use app\models\Comment;
 use yii\helpers\Url;
-$this->title = 'Профиль мастера';
+$this->title = 'Masters59 | ' .$afish->name;
 ?>
-<section class="latest-news blog blog-single padding-top-100 padding-bottom-100">
+<section class="latest-news blog blog-single single-cat">
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <article class="margin-bottom-50"> <a href="#"> <img class="img-responsive"src="<?= $afish->getImage();?>" alt=""> </a>
+                <article class="margin-bottom-50">
+                    <img class="img-responsive"src="<?= $afish->getImage();?>" alt="">
                     <div class="news-detail">
                         <div class="row">
                             <div class="col-md-3 text-center">
-                                <div class="avatar"> <img class="img-circle" src="/masters/images/avatar-1.png" alt=""> </div>
                                 <h6><i class="fa fa-phone"></i><?= $afish->phone ?></li></h6>
                                 <p><i class="fa fa-eye"></i><?= (int) $afish->viewed?></p>
                             </div>
                             <div class="col-md-9"><h4><?= $afish->name ?></h4>
                                 <p><?= $afish->description ?></p>
                                 <div class="row margin-top-30 margin-bottom-30">
-                                    <div class="col-md-6">
-                                        <p class="font-italic"><?= $afish->content ?></p>
-                                    </div>
+                                    <p><?= $afish->content ?></p>
                                 </div>
                             </div>
                         </div>

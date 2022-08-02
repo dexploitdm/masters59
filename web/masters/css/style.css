@@ -308,8 +308,6 @@ section {
 .top-bar .social_icons {
 	margin-top: 5px;
 }
-.top-bar .some-info{
-}
 .top-bar .some-info li{
 	display:inline-block;
 	color:#fff;
@@ -318,6 +316,7 @@ section {
 	font-size:12px;
 	margin-left:50px;
 	text-align:right;
+	transition: .3s;
 }
 .top-bar .some-info li i{
 	margin-right:5px;
@@ -345,6 +344,7 @@ header .logo {
 	text-align: left;
 	z-index: 9999;
 	margin-top: 5px;
+	max-width: 190px;
 }
 header nav {
 	display: inline-block;
@@ -599,6 +599,7 @@ header.coporate-header .ownmenu > li > .megamenu {
 	background-size:cover;
 	position:relative;
 	height:382px;
+	transition: .3s;
 }
 .sub-banner .position-center-center{
 	width:100%;
@@ -611,6 +612,8 @@ header.coporate-header .ownmenu > li > .megamenu {
 	text-transform:uppercase;
 	letter-spacing:2px;
 	text-shadow: 4px 4px 8px rgba(150, 150, 150, 1);
+	padding: 0 10px;
+	transition: .3s;
 }
 .sub-banner .breadcrumb{
 	background:none;
@@ -623,6 +626,22 @@ header.coporate-header .ownmenu > li > .megamenu {
 .sub-banner .breadcrumb li a{
 	color:#ff6c3a;
 	font-family: 'Open Sans', sans-serif;
+}
+@media (max-width: 980px) {
+	.sub-banner {
+		height: 300px;
+	}
+	.sub-banner h2 {
+		font-size: 40px;
+	}
+}
+@media (max-width: 768px) {
+	.sub-banner {
+		height: 200px;
+	}
+	.sub-banner h2 {
+		font-size: 32px;
+	}
 }
 /*=======================================================
       SEO SECORE
@@ -686,12 +705,14 @@ header.coporate-header .ownmenu > li > .megamenu {
 	position:relative;
 	overflow:hidden;
 	margin-bottom:30px;
+	border-radius: 10px;
+	transition: .3s;
 }
 .case ul li article .case-detail{
 	background:#f9f9f9;
 	position:absolute;
-	bottom:-50%;
-	padding:20px;
+	bottom:0;
+	padding: 10px 20px 20px;
 	text-align:center;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -700,14 +721,16 @@ header.coporate-header .ownmenu > li > .megamenu {
 	transition: all 0.4s ease-in-out;
 	width:100%;
 }
+.d-best-cover {
+	height: 290px;
+	background-size: cover;
+	background-repeat: no-repeat, repeat;
+}
 .case ul li article .case-detail h5{
 	font-weight:normal;
 }
-.case ul li article:hover img{
-	opacity:0.7;
-}
-.case ul li article:hover .case-detail{
-	bottom:0px;
+.case ul li article:hover {
+	box-shadow: 10px 5px 5px #e8e8e8;
 }
 .margin-left-80px{
 	margin-left:-80px;
@@ -1233,13 +1256,6 @@ header.coporate-header .ownmenu > li > .megamenu {
 .intro .list-what-we li{
 	margin-bottom:30px;
 }
-
-/*=======================================================
-      CASE STUDIO SINGLE
-========================================================*/
-.case-studies-single{
-	
-}
 /*=======================================================
       TEAM
 ========================================================*/
@@ -1468,9 +1484,9 @@ footer .news-letter button{
 	font-family:'FontAwesome';
 }
 .footer-info .links li a{
-	color:#969ea7;
-	line-height:40px;
 	font-size:13px;
+	line-height: 40px;
+	color:#969ea7;
 	padding-bottom:3px;
 	border-bottom:1px dashed rgba(255,255,255,0);
 }
@@ -1758,11 +1774,17 @@ footer .news-letter button{
 	background-size: cover;
 }
 .sub-banner.d2 {
-	background: url(../images/bg/express.jpg) fixed center center no-repeat;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/bg/express.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size:  cover;
+	-o-background-size: cover;
 	background-size: cover;
 }
 .sub-banner.d3 {
-	background: url(../images/bg/tech.jpg) fixed center center no-repeat;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/bg/tech.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size:  cover;
+	-o-background-size: cover;
 	background-size: cover;
 }
 .sub-banner.d5 {
@@ -1770,7 +1792,10 @@ footer .news-letter button{
 	background-size: cover;
 }
 .sub-banner.d6 {
-	background: url(../images/bg/raz.jpg) fixed center center no-repeat;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/bg/raz.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size:  cover;
+	-o-background-size: cover;
 	background-size: cover;
 }
 .sub-banner.d7 {
@@ -1808,4 +1833,255 @@ footer .news-letter button{
 }
 .footer-info .quote .control-label {
 	display: none;
+}
+.a-box {
+	display: flex;
+	background-color: #f9f9f9;
+	border-radius: 112px 10px 10px;
+	transition: .3s;
+}
+@media (min-width: 680px) {
+	.a-box:hover {
+		background-color: #ffffff;
+		box-shadow: 0 1px 4px #e2e2e2;
+	}
+	.a-box:hover .a-box-cover {
+		border-radius: 0;
+	}
+	.a-box:hover .a-box-cover img {
+		width: 200px;
+	}
+}
+.a-box-m {
+	display: flex;
+	max-width: 260px;
+	transition: .3s;
+}
+.a-box-cover {
+	display: inline-block;
+	border-radius: 50%;
+	position: relative;
+	overflow: hidden;
+	height: 140px;
+	width: 140px;
+	margin-bottom: 10px;
+	transition: .3s;
+}
+.a-box-view {
+	padding: 10px 20px 0;
+	text-align: center;
+	transition: .3s;
+}
+.a-box-info {
+	width: 100%;
+	padding: 0 10px 10px 0;
+	transition: .3s;
+}
+.a-box-info_bottom {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	transition: .3s;
+}
+@media (max-width: 680px) {
+	.a-box {
+		flex-wrap: wrap;
+		border-radius: 10px;
+	}
+	.a-box-m {
+		max-width: 100%;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	.a-box-cover {
+		margin: -40px auto auto;
+		height: 180px;
+		width: 180px;
+	}
+	.a-box-view {
+		padding-left: 0;
+	}
+	.a-box-info {
+		text-align: center;
+		padding: 12px;
+	}
+}
+.blog article img.img-responsive {
+	border-radius: 10px 10px 0 0;
+}
+.blog-single .news-detail {
+	padding-top: 14px;
+}
+.case-studies {
+	padding-bottom: 60px;
+}
+.cat {
+	padding-bottom: 100px;
+}
+.single-cat {
+	padding: 20px 0;
+}
+.fix-sub .auth {
+	right: 0;
+}
+.d-block {
+	max-width: 760px;
+	margin: auto;
+	padding: 30px 20px;
+}
+@media (max-width: 1200px) {
+	.some-info {
+		display: flex;
+	}
+	.top-bar .some-info li {
+		margin-left: 10px;
+	}
+}
+@media (max-width: 991px) {
+	.footer-info h6 {
+		margin-top: 20px;
+	}
+}
+@media (max-width: 768px) {
+	.header-info {
+		display: none;
+	}
+	.header .ownmenu li {
+		display: none;
+	}
+	.ownmenu ul.dropdown li {
+		display: block;
+	}
+	.case-studies,
+	.cat {
+		padding-bottom: 0;
+	}
+	.case ul li article .case-detail {
+		bottom: 0;
+	}
+	.single-cat {
+		padding-bottom: 0;
+	}
+	.ownmenu {
+		width: 100%;
+	}
+	.ownmenu li {
+		float: left;
+	}
+	.d-block h3 {
+		font-size: 22px;
+	}
+	.d-block h4 {
+		font-size: 18px;
+	}
+}
+/*=======================================================
+      Afish  form
+========================================================*/
+.afish-block {
+	padding: 40px 0 100px;
+	transition: .3s;
+}
+.afish-form {
+	max-width: 760px;
+	margin: auto;
+	padding: 0 20px;
+}
+.afish-form-blocks {
+	display: flex;
+	justify-content: space-around;
+	transition: .3s;
+}
+.afish-form-blocks_item {
+	width: 100%;
+}
+.afish-form-blocks_item:first-child {
+	padding-right: 10px;
+}
+.afish-form h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	transition: .3s;
+}
+.afish-form .form-control {
+	border-radius: 10px;
+	letter-spacing: 1px;
+}
+.afish-form .form-control:focus {
+	border-color: #222935;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(197 197 197 / 60%);
+}
+.afish-form .contact-form label {
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+.afish-form .contact-form textarea {
+	resize: none;
+}
+@media (max-width: 768px) {
+	.afish-block {
+		padding-top: 30px;
+	}
+	.afish-form h2 {
+		font-size: 30px;
+	}
+	.afish-form-blocks {
+		flex-wrap: wrap;
+	}
+}
+@media (max-width: 480px) {
+	.afish-block {
+		padding-top: 0;
+		padding-bottom: 20px;
+	}
+	.afish-form h2 {
+		font-size: 26px;
+		margin-bottom: 30px;
+	}
+}
+/*=======================================================
+      Auth  form
+========================================================*/
+.auth-block {
+	padding: 40px 0 100px;
+	transition: .3s;
+}
+.auth-form {
+	max-width: 340px;
+	margin: auto;
+	padding: 0 20px;
+}
+.auth-form .control-label,
+.auth-form label {
+	font-weight: 400;
+}
+.auth-form p,
+.auth-form h1 {
+	text-align: center;
+	transition: .3s;
+}
+.auth-form h1 {
+	padding-bottom: 20px;
+}
+.auth-form-btn {
+	text-align: center;
+}
+@media (max-width: 768px) {
+	.auth-block {
+		padding: 20px 0 60px;
+	}
+	.auth-form h1 {
+		font-size: 34px;
+	}
+}
+@media (max-width: 480px) {
+	.auth-block {
+		padding: 10px 0 30px;
+	}
+	.auth-form h1 {
+		font-size: 26px;
+	}
 }

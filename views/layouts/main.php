@@ -21,6 +21,7 @@ MastersAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#222935">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -65,10 +66,9 @@ MastersAsset::register($this);
                             <?= \app\components\MenuWidget::widget(['tpl' => 'menu']) ?>
                         </ul>
                     </li>
-                    <li><a href="/site/about/">О компании</a></li>
-                    <li><a href="/site/contact/"> Контакты </a></li>
-                    <li><a href="/site/login">Профиль</a>
-                        <ul class="dropdown">
+                    <li><a href="/site/about/">О нас</a></li>
+                    <li><a href="#"><span><i class="fa-solid fa-user"></i></span></a>
+                        <ul class="dropdown auth">
                             <?php if (Yii::$app->user->isGuest): ?>
                                 <li class="menu-item menu-item-has-children"><a
                                             href="<?= Url::toRoute(['auth/login']) ?>">Вход</a></li>
@@ -85,19 +85,11 @@ MastersAsset::register($this);
                             <?php endif; ?>
                         </ul>
                     </li>
-                    <!--======= SEARCH ICON =========-->
-                    <!--                        <li class="search-nav right"><a href="#."><i class="fa fa-search"></i></a>-->
-                    <!--                            <ul class="dropdown">-->
-                    <!--                                <li>-->
-                    <!--                                    <form>-->
-                    <!--                                        <input type="search" class="form-control" placeholder="Enter Your Keywords..." required>-->
-                    <!--                                        <button type="submit"> SEARCH </button>-->
-                    <!--                                    </form>-->
-                    <!--                                </li>-->
-                    <!--                            </ul>-->
-                    <!--                        </li>-->
                 </ul>
             </nav>
+
+
+
         </div>
     </div>
 </header>

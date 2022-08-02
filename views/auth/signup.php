@@ -10,40 +10,34 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Регистрация';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<section class="latest-news blog blog-single padding-top-100 padding-bottom-100">
-    <div class="container">
-        <div class="row">
-    <h1><?= Html::encode($this->title) ?></h1>
+<section class="auth-block">
+    <div class="auth-form">
+        <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Пожалуйста заполните все поля</p>
+        <p>Для регистрации заполните все поля</p>
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
-        ],
-    ]); ?>
+        <?php $form = ActiveForm::begin([
+            'id' => 'login-form',
+            'fieldConfig' => [
+                'template' => "{label}\n<div>{input}</div>\n<div>{error}</div>",
+                'labelOptions' => ['class' => 'control-label'],
+            ],
+        ]); ?>
 
-    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
-    <?= $form->field($model, 'email')->textInput() ?>
+        <?= $form->field($model, 'email')->textInput() ?>
 
-    <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
 
 
-    <div class="form-group">
-        <div class="col-lg-offset-1 col-lg-11">
-            <?= Html::submitButton('Зарегистрироватся', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+        <div class="form-group">
+            <div class="auth-form-btn">
+                <?= Html::submitButton('Зарегистрироватся', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+            </div>
         </div>
+        <?php ActiveForm::end(); ?>
+
     </div>
-    </div>
-
-
-    <?php ActiveForm::end(); ?>
-
-
-</div>
 </section>
